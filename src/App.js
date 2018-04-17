@@ -1,4 +1,13 @@
 import React, { Component, Fragment } from 'react';
+import { createPortal } from "react-dom";
+
+class Portals extends Component {
+  render() {
+    return createPortal(<Message />, document.getElementById("touchme"));
+  }
+}
+
+const Message = () => "Just touched it!"
 
 
 class RetrunTypes_Fragment extends Component {
@@ -25,6 +34,7 @@ class App extends Component {
       <Fragment>
         <RetrunTypes_Fragment />
         <RetrunTypes_String />
+        <Portals />
       </Fragment>
     );
   }
